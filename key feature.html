@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Service Features</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("keyfeature.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .left-section {
+        flex: 1;
+      }
+
+      .left-section img {
+        width: 100%;
+        border-radius: 10px;
+        max-width: 500px;
+      }
+
+      .right-section {
+        flex: 1;
+        padding-left: 40px;
+      }
+
+      .right-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #00bcd4; /* Highlighted color for the title */
+        text-shadow: 
+          2px 2px 4px rgba(0, 0, 0, 0.6), /* Dark shadow for contrast */
+          0 0 25px rgba(0, 188, 212, 0.6); /* Glowing effect */
+        background: linear-gradient(45deg, #00bcd4, #004d40); /* Gradient background */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glow 1.5s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 10px rgba(58, 170, 185, 0.8);
+        }
+        to {
+          text-shadow: 0 0 20px rgb(47, 140, 153);
+        }
+      }
+
+      .right-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        color: #f1f1f1; /* Grey color for paragraph */
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .feature {
+        background-color: #2e2e2e;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        transition: transform 0.3s;
+        box-shadow: 0 0 1px rgba(0, 188, 212, 0.8); /* Blue glow */
+      }
+
+      .feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgb(5, 166, 187); /* Stronger blue glow on hover */
+      }
+
+      .feature img {
+        width: 40px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .feature h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .feature p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #a9a9a9; /* Grey color for text */
+      }
+
+      /* Ensure it looks good on smaller screens */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .left-section img {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <!-- Replace this with your actual image -->
+        <img src="php-developer.jpg" alt="Person monitoring data" />
+      </div>
+      <div class="right-section">
+        <h1>Key Service Features Protecting You</h1>
+        <p>
+          Our comprehensive security services are designed to safeguard your digital assets with customized solutions, 24/7 incident response, and proactive threat assessments. 
+        </p>
+        <div class="features-grid">
+          <div class="feature">
+            <img src="securityicon.png" alt="Security Icon" />
+            <h3>Customized Security Solutions</h3>
+            <p>Tailored to meet the unique needs of your business, our security solutions offer personalized protection for your infrastructure.</p>
+          </div>
+          <div class="feature">
+            <img src="va.png" alt="Assessment Icon" />
+            <h3>Vulnerability Assessment</h3>
+            <p>Identify and address potential weaknesses in your system to proactively mitigate security risks..</p>
+          </div>
+          <div class="feature">
+            <img
+              src="ir.png"
+              alt="Incident Response Icon"
+            />
+            <h3>24/7 Incident Response</h3>
+            <p>Immediate support to handle security breaches anytime.</p>
+          </div>
+          <div class="feature">
+            <img src="usertraining.png" alt="Training Icon" />
+            <h3>User Training Programs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
