@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: url('bg1.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        text-align: center;
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent background with valid color value */
+        border-radius: 15px; /* Rounded corners */
+        background-clip: padding-box; /* Ensure background clips to the padding box */
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #138291, #266e77);
+        -webkit-background-clip: text;
+        background-clip: text; /* Add standard property */
+        -webkit-text-fill-color: transparent;
+      }
+
+      p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #bdbdbd;
+        margin-bottom: 60px;
+        letter-spacing: 1px;
+      }
+
+      .blog-cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .card {
+        background-color: #2a2a2a;
+        border-radius: 20px;
+        width: 280px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 15px;
+        transition: transform 0.3s;
+      }
+
+      .card h3 {
+        margin: 15px 0;
+        color: #00bcd4;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .card a {
+        display: inline-block;
+        background-color: #00bcd4;
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .card a:hover {
+        background-color: #028c9e;
+      }
+
+      /* Flashy animation for highlighted blog card */
+      .highlight {
+        border: 2px solid #00bcd4;
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #00bcd4;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 10px #237c88;
+        }
+        50% {
+          box-shadow: 0 0 20px #237c88;
+        }
+        100% {
+          box-shadow: 0 0 10px #237c88;
+        }
+      }
+
+      /* Navigation arrow */
+      .navigation-arrow {
+        margin: 50px auto 0; /* Centers the arrow horizontally */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #00bcd4;
+        border-radius: 50%;
+        font-size: 24px;
+        color: #00bcd4;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+      }
+
+      .navigation-arrow:hover {
+        background-color: #00bcd4;
+        color: white;
+        box-shadow: 0 0 30px rgba(0, 188, 212, 1);
+      }
+
+      /* Flashy glowing effect around the arrow */
+      .navigation-arrow::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 188, 212, 0.2), transparent 80%);
+        animation: rotate 5s infinite linear;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Card hover effects */
+      .card:hover img {
+        transform: scale(1.1);
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+      }
+
+      @media (max-width: 768px) {
+        .blog-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card {
+          width: 90%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BLOGS</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        congue metus quis accumsan euismod. Maecenas sed est mollis, convallis
+        nisi convallis, imperdiet massa.
+      </p>
+
+      <div class="blog-cards">
+        <!-- First blog card -->
+        <div class="card">
+          <img src="chor.jpg" alt="Blog Image 1" />
+          <h3>Blog 1</h3>
+          <a href="https://cyberscoop.com/cisa-moves-away-from-trying-to-influence-content-moderation-decisions-on-election-disinformation/" target="_blank">BLOG 2</a> <!-- Link to first blog -->
+        </div>
+
+        <!-- Highlighted blog card -->
+        <div class="card highlight">
+          <img src="chor.jpg" alt="Blog Image 2" />
+          <h3>Blog 2</h3>
+          <a href="https://www.dataexpert.eu/news/the-world-of-digital-forensics/ " target="_blank">BLOG 1</a> <!-- Link to highlighted blog -->
+        </div>
+
+        <!-- Third blog card -->
+        <div class="card">
+          <img src="chor.jpg" alt="Blog Image 3" />
+          <h3>Blog 3</h3>
+          <a href="https://www.kaggle.com/code/abdelrahmanamer08/cyberattack-eda-ml#ML " target="_blank">BLOG NAME</a> <!-- Link to third blog -->
+        </div>
+      </div>
+
+      <!-- Navigation arrow -->
+      <a href="https://www.google.com" class="navigation-arrow" target="_blank">
+        <span>&#10132;</span>
+      </a>
+    </div>
+  </body>
+</html>
