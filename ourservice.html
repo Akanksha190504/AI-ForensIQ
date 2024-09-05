@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protecting Your Digital Assets Expertly</title>
+    <style>
+        /* Root variables for easy customization */
+        :root {
+            --primary-color: #007bff;
+            --background-color: #181818;
+            --card-bg-color: #282828;
+            --text-color: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --hover-glow-color: rgba(0, 123, 255, 0.8); /* Blue glow color */
+            --button-gradient: linear-gradient(135deg, #007bff, #0056b3);
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Updated Background with gradient and image */
+        .bg-gradient {
+            background: linear-gradient(135deg, rgba(24, 24, 24, 0.9), rgba(40, 40, 40, 0.9)), 
+                        url('bg1.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8; /* Slight opacity to blend with the gradient */
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--text-color);
+            z-index: 1;
+            position: relative;
+        }
+
+        .service-header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-header p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            line-height: 1.8;
+            color: #ccc;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .our-services {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Advanced styling for the container and cards */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
+            gap: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Card styling */
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 8px 15px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1;
+            min-width: 250px;
+            height: 350px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--hover-glow-color);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .card-icon svg {
+            width: 25px;
+            height: 25px;
+            fill: var(--text-color);
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .card-text {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        /* Button styles inside cards */
+        .card-button {
+            padding: 10px 20px;
+            background: var(--button-gradient);
+            border: none;
+            border-radius: 30px;
+            color: var(--text-color);
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-end;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .card-button:hover {
+            background: linear-gradient(135deg, #0056b3, #003d80);
+            transform: scale(1.05);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-header h1 {
+                font-size: 2.5em;
+            }
+
+            .our-services {
+                font-size: 1.6em;
+            }
+
+            .card {
+                height: auto;
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Service Header Section -->
+    <div class="service-header">
+        <div class="our-services">Our Services</div>
+        <h1>Protecting Your Digital Assets Expertly</h1>
+        <p>We offer comprehensive solutions for your digital security needs. From cybersecurity assessments to incident response and recovery, we are your trusted partner in safeguarding your digital presence.</p>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                        <path d="M5.121 14.22a.5.5 0 0 1-.703.042.5.5 0 0 1-.042-.703l1.5-1.5.5.5a.5.5 0 0 1 .042.703.5.5 0 0 1-.703.042L5.12 14.22z"/>
+                        <path d="M4.338 1.11a.5.5 0 0 0-.703.042.5.5 0 0 0-.042.703L3.17 2.927l-.5-.5a.5.5 0 0 0-.042-.703.5.5 0 0 0 .703-.042L4.338 1.11z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Cyber Security Assessment</h3>
+            </div>
+            <p class="card-text">Our thorough assessments will identify vulnerabilities and provide actionable recommendations to improve your security posture.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">
+                        <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Intrusion Detection and Prevention</h3>
+            </div>
+            <p class="card-text">Real-time monitoring and prevention strategies to stop unauthorized access and protect your assets.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Incident Response and Recovery</h3>
+            </div>
+            <p class="card-text">In the event of a breach, our rapid response team helps you recover quickly and minimize damage.</p>
+            <button class="card-button">Learn More</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Gradient Background for Footer */
+        .footer {
+            width: 100%;
+            padding: 50px;
+            background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: background 0.5s;
+        }
+
+        .footer div {
+            margin: 10px;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        ul li a:hover {
+            color: #00b4d8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00b4d8;
+            transform: scale(1.2);
+        }
+
+        .newsletter {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            width: 250px;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+
+        .newsletter input[type="email"]:focus {
+            box-shadow: 0 0 5px 2px #00b4d8;
+        }
+
+        .newsletter button {
+            background-color: #00b4d8;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #028090;
+            transform: scale(1.05);
+        }
+
+        .theme-toggle {
+            margin-top: 20px;
+        }
+
+        /* Dark and Light Mode */
+        body.light-mode {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        body.light-mode .footer {
+            background: linear-gradient(135deg, #ddd, #f4f4f4);
+        }
+
+        body.light-mode a, body.light-mode p {
+            color: #333;
+        }
+
+        body.light-mode .newsletter input[type="email"] {
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter input[type="email"] {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <!-- Main page content can go here -->
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h3>AIForensIQ</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet neque tortor.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Our Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Features</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: AIForensIQ@website.com</p>
+                <p>Address: 838 Cantt Sialkot, ENG</p>
+                <p>Phone: +02 5421234560</p>
+            </div>
+
+            <div>
+                <h3>Newsletter</h3>
+                <form class="newsletter">
+                    <input type="email" placeholder="Enter your email" id="email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        
+        
+    </footer>
+
+    <script>
+        // Theme Toggle
+
+
+        // Form Validation for Newsletter
+        const newsletterForm = document.querySelector('.newsletter');
+        const emailInput = document.getElementById('email');
+
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailValue = emailInput.value;
+            if (!validateEmail(emailValue)) {
+                alert("Please enter a valid email address.");
+            } else {
+                alert("Subscription successful!");
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+
+</body>
+</html>

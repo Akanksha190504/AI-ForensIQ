@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #171717; /* Fallback color */
+            background-image: url('aboutbg.jpg');
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+
+        /* AboutUs Container */
+        .AboutUs {
+            position: relative;
+            max-width: 1440px;
+            height: 762px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0); /* Semi-transparent black background */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+
+        /* Text Section */
+        .Text {
+            position: absolute;
+            left: 707px;
+            top: 68px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        /* Tx Container */
+        .Tx {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* About Us Title */
+        .AboutUsTitle {
+            color: #3ED5DD;
+            font-size: 21px;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            line-height: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        /* Main Text */
+        .MainText {
+            width: 635px;
+            color: white;
+            font-size: 67px;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 600;
+            line-height: 70px;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+        }
+
+        /* Description Text */
+        .Description {
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 23px;
+            word-wrap: break-word;
+            max-width: 635px;
+        }
+
+        /* Image Containers */
+        .Image {
+            position: absolute;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* First Image */
+        .image1 {
+            width: 383px;
+            height: 440px;
+            left: 98px;
+            top: 68px;
+        }
+
+        /* Second Image */
+        .image2 {
+            width: 393px;
+            height: 440px;
+            left: 234px;
+            top: 230px;
+        }
+
+        /* Add hover effects to images */
+        .Image:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Intensify shadow */
+        }
+
+        .Image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        /* Button Style */
+        .Button {
+            position: absolute;
+            width: 324px;
+            padding: 24px;
+            left: 707px;
+            top: 598px;
+            background: linear-gradient(299deg, #0A767B 0%, #00A7D6 100%);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Button Hover Effect */
+        .Button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 167, 214, 0.6);
+        }
+
+        .ReadMore {
+            color: white;
+            font-size: 24px;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .AboutUs {
+                width: 100%;
+                padding: 20px;
+                height: auto;
+            }
+
+            .Text {
+                left: 20px;
+                top: 20px;
+                max-width: 100%;
+            }
+
+            .MainText {
+                font-size: 36px;
+                line-height: 42px;
+            }
+
+            .Description {
+                font-size: 14px;
+            }
+
+            .Image {
+                position: relative;
+                width: 90%;
+                height: auto;
+                margin: 20px 0;
+            }
+
+            .Button {
+                position: relative;
+                left: 0;
+                top: 0;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="AboutUs">
+        <div class="Text">
+            <div class="Tx">
+                <div class="AboutUsTitle">ABOUT US</div>
+                <div class="MainText">Discover Our Journey Protecting Your Digital World with Expertise and Care</div>
+            </div>
+            <div class="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue metus quis accumsan euismod. Maecenas sed est mollis, convallis nisi convallis, imperdiet massa. Proin ipsum nunc, lacinia ac faucibus quis, ullamcorper non metus. Aliquam viverra volutpat feugiat. Donec fringilla aliquam mollis. Sed cursus quam nibh, quis placerat metus dapibus sed. Nam varius nisi in nisi maximus blandit sit amet ac tellus.</div>
+        </div>
+        <div class="Image image1">
+            <img src="about.jpg" alt="Image 1">
+        </div>
+        <div class="Image image2">
+            <img src="about1.jpg" alt="Image 2">
+        </div>
+        <div class="Button">
+            <div class="ReadMore">Read More</div>
+        </div>
+    </div>
+    <script>
+        // scripts.js
+        // No JavaScript functionality specified in the current scope
+    </script>
+</body>
+</html>

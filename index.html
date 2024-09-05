@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    :root {
+      --bg-dark: rgba(23, 23, 23, 1);
+      --primary-gradient: linear-gradient(180deg, rgb(9.76, 117.54, 123.25) 0%, rgb(0, 167.48, 213.56) 100%);
+      --white: rgba(255, 255, 255, 1);
+      --headings-h4-600-font-family: "Titillium Web", Helvetica, sans-serif;
+      --headings-h4-600-font-size: 38px;
+      --headings-h4-600-font-weight: 600;
+      --transition-time: 0.3s;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('improvbg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--white);
+      overflow-x: hidden;
+      height: 100%;
+    }
+
+    .HOME-PAGE {
+      width: 100%;
+      min-height: 100vh; /* Ensure the home page fills the full height of the viewport */
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Vertically center the content */
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .overlap-group-wrapper {
+      width: 100%;
+      max-width: 1440px;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(5px);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    .navbar-left .pagename {
+      color: var(--white);
+      font-family: var(--headings-h4-600-font-family);
+      font-size: var(--headings-h4-600-font-size);
+      font-weight: var(--headings-h4-600-font-weight);
+      transition: transform var(--transition-time);
+    }
+
+    .navbar-left .pagename:hover {
+      transform: scale(1.1);
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .frame {
+      display: flex;
+      gap: 15px;
+      background-color: #223336;
+      padding: 12px 15px;
+      border-radius: 50px;
+    }
+
+    .frame button {
+      background: var(--primary-gradient);
+      border-radius: 40px;
+      padding: 10px 18px;
+      color: var(--white);
+      border: none;
+      font-family: var(--headings-h4-600-font-family);
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background var(--transition-time), transform var(--transition-time);
+    }
+
+    .frame button:hover {
+      background: rgb(0, 123, 255);
+      transform: translateY(-3px);
+    }
+
+    .login-button {
+      background: var(--primary-gradient);
+      border-radius: 40px;
+      padding: 10px 18px;
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: var(--headings-h4-600-font-family);
+      transition: background var(--transition-time), transform var (--transition-time);
+    }
+
+    .login-button:hover {
+      background: rgb(0, 123, 255);
+      transform: translateY(-3px);
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      animation: fadeIn var(--transition-time) ease-in;
+    }
+
+    .text-side {
+      width: 50%;
+    }
+
+    .text-side h1 {
+      font-size: 64px;
+      font-weight: 400;
+      animation: slideInLeft var(--transition-time) ease-in;
+    }
+
+    .text-side p {
+      font-size: 16px;
+      margin-top: 20px;
+      line-height: 1.6;
+      animation: fadeInUp var(--transition-time) ease-in;
+    }
+
+    .image-side {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-side img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .text-side {
+        width: 100%;
+        text-align: center;
+      }
+
+      .image-side {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .text-side h1 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Footer styles */
+    .footer {
+      width: 100%;
+      padding: 50px;
+      background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: background 0.5s;
+    }
+
+    .footer div {
+      margin: 10px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    ul li a:hover {
+      color: #00b4d8;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00b4d8;
+      transform: scale(1.2);
+    }
+
+    .newsletter {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      width: 250px;
+      outline: none;
+      transition: box-shadow 0.3s;
+    }
+
+    .newsletter input[type="email"]:focus {
+      box-shadow: 0 0 5px 2px #00b4d8;
+    }
+
+    .newsletter button {
+      background-color: #00b4d8;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .newsletter button:hover {
+      background-color: #028090;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="HOME-PAGE">
+    <div class="overlap-group-wrapper">
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="navbar-left">
+          <div class="pagename">ForensIQ</div>
+        </div>
+        <div class="navbar-right">
+          <div class="frame">
+            <a href="key feature.html"><button>Features</button></a>
+      <a href="ourservice.html"><button>Services</button></a>
+      <a href="blog.html"><button>Blogs</button></a>
+      <a href="aboutus.html"><button>About Us</button></a>
+          </div>
+          <a href="login.html"><button class="login-button">Login</button></a>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="content-wrapper">
+        <div class="text-side">
+          <h1>Speed Up Your<br>Cyber Response</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum congue metus quis accumsan euismod.</p>
+          <p>Maecenas sed est mollis, convallis nisi convallis, imperdiet massa.</p>
+          <p>Proin ipsum nunc, lacinia ac faucibus quis, ullamcorper non metus.</p>
+        </div>
+
+        <!-- Image section -->
+        <div class="image-side">
+          <img src="shieldnobg.png" alt="Cyber Security" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+      <div class="footer">
+          <div>
+              <h3>AIForensIQ</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet neque tortor.</p>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+
+          <div>
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="ourservice.html">Our Service</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="blog.html">Blogs</a></li>
+                  <li><a href="key feature.html">Features</a></li>
+              </ul>
+          </div>
+
+          <div>
+              <h3>Contact Us</h3>
+              <p>Email: AIForensIQ@website.com</p>
+              <p>Address: 838 Cantt Sialkot, ENG</p>
+              <p>Phone: +02 5421234560</p>
+          </div>
+
+          <div>
+              <h3>Newsletter</h3>
+              <form class="newsletter">
+                  <input type="email" placeholder="Enter your email" id="email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+      // Form Validation for Newsletter
+      const newsletterForm = document.querySelector('.newsletter');
+      const emailInput = document.getElementById('email');
+
+      newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailValue = emailInput.value;
+          if (!validateEmail(emailValue)) {
+              alert("Please enter a valid email address.");
+          } else {
+              alert("Subscription successful!");
+          }
+      });
+
+      function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(String(email).toLowerCase());
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Page with File Validation and Submit Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('YU.png') no-repeat center center fixed; /* Replace with your image path */
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 60px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(24, 24, 24, 0.4);
+            border-color: rgba(11, 11, 11, 0.8);
+        }
+
+        .card h3 {
+            background-color: #d3d100;
+            color: #0f0f0f;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(211, 209, 0, 0.5);
+        }
+
+        .icon-container {
+            position: absolute;
+            top: -60px;
+            left: calc(50% - 25px);
+            background-color: rgba(127, 119, 119, 0.041);
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        .icon-container img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00e0ff;
+        }
+
+        .input-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            background-color: #333;
+            color: #00e0ff;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group input[type="file"]:hover {
+            background-color: #444;
+        }
+
+        .input-group input[type="file"]::-webkit-file-upload-button {
+            background-color: #00e0ff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .input-group input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: #009fcc;
+            transform: scale(1.05);
+        }
+
+        /* Submit Button Styles */
+        .submit-btn {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #ff0066, #ffcc00);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 10px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 105, 180, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Phishing Activity Card -->
+    <div class="card">
+       
+        <h3>Phishing Activity</h3>
+        <div class="input-group">
+            <label>Email/file</label>
+            <input type="file" name="emailfile" id="emailfile" onchange="validateFile('emailfile', ['eml', 'msg', 'csv'])">
+        </div>
+        <div class="input-group">
+            <label>System file</label>
+            <input type="file" name="systemfile" id="systemfile" onchange="validateFile('systemfile', ['log', 'json', 'zip', 'csv'])">
+        </div>
+        <div class="input-group">
+            <label>Network file</label>
+            <input type="file" name="networkfile" id="networkfile" onchange="validateFile('networkfile', ['pcap', 'log'])">
+        </div>
+        <div class="input-group">
+            <label>Upload Attachment</label>
+            <input type="file" name="uploadAttachment" id="uploadAttachment" onchange="validateFile('uploadAttachment', ['docx', 'pdf', 'xls', 'csv'])">
+        </div>
+    </div>
+
+    <!-- Suspicious Network Activity Card -->
+    <div class="card">
+
+        <h3>Suspicious Network Activity</h3>
+        <div class="input-group">
+            <label>Email/file</label>
+            <input type="file" name="emailfile" id="emailfile2" onchange="validateFile('emailfile2', ['eml', 'msg', 'csv'])">
+        </div>
+        <div class="input-group">
+            <label>System file</label>
+            <input type="file" name="systemfile" id="systemfile2" onchange="validateFile('systemfile2', ['log', 'json', 'zip', 'csv'])">
+        </div>
+        <div class="input-group">
+            <label>Network file</label>
+            <input type="file" name="networkfile" id="networkfile2" onchange="validateFile('networkfile2', ['pcap', 'log'])">
+        </div>
+        <div class="input-group">
+            <label>Upload Attachment</label>
+            <input type="file" name="uploadAttachment" id="uploadAttachment2" onchange="validateFile('uploadAttachment2', ['docx', 'pdf', 'xls', 'csv'])">
+        </div>
+    </div>
+</div>
+
+<!-- Submit Button -->
+<button class="submit-btn" onclick="validateAndSubmit()">Submit</button>
+
+<script>
+    function validateFile(inputId, allowedExtensions) {
+        const fileInput = document.getElementById(inputId);
+        const filePath = fileInput.value;
+
+        // Get file extension
+        const fileExtension = filePath.split('.').pop().toLowerCase();
+
+        // Check if file extension is valid
+        if (!allowedExtensions.includes(fileExtension)) {
+            alert("Invalid file type! Please select one of the following: " + allowedExtensions.join(', '));
+            fileInput.value = ''; // Clear the file input
+        }
+    }
+
+    function validateAndSubmit() {
+        const emailfile1 = document.getElementById('emailfile').value;
+        const systemfile1 = document.getElementById('systemfile').value;
+        const networkfile1 = document.getElementById('networkfile').value;
+        const uploadAttachment1 = document.getElementById('uploadAttachment').value;
+
+        const emailfile2 = document.getElementById('emailfile2').value;
+        const systemfile2 = document.getElementById('systemfile2').value;
+        const networkfile2 = document.getElementById('networkfile2').value;
+        const uploadAttachment2 = document.getElementById('uploadAttachment2').value;
+
+        // Check if all files are selected
+        if (!emailfile1 || !systemfile1 || !networkfile1 || !uploadAttachment1 || 
+            !emailfile2 || !systemfile2 || !networkfile2 || !uploadAttachment2) {
+            alert("Please upload all required files for both activities.");
+        } else {
+            alert("Form submitted successfully!");
+        }
+    }
+</script>
+
+</body>
+</html>

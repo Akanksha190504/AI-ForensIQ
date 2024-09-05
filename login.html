@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: url('login2.png') no-repeat center center fixed;
+        background-size: cover; 
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400vh;
+      }
+
+      .login-box {
+        background-color: #2e2e2e; 
+        padding: 80px 40px;
+        border-radius: 10px;
+        width: 300%;
+        max-width: 600px;
+        box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+        text-align: center;
+      }
+
+      .login-box h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #f5f5f5;
+      }
+
+      .login-image {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        color: #d1d1d1;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f0e7cf; 
+        font-size: 1rem;
+      }
+
+      input[type="email"]::placeholder,
+      input[type="password"]::placeholder {
+        color: #555555;
+      }
+
+      .password-container {
+        position: relative;
+      }
+
+      .eye-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #555555;
+      }
+
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .checkbox-container input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      .checkbox-container label {
+        color: #d1d1d1;
+        font-size: 0.9rem;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #d1c39d; 
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .login-btn:hover {
+        background-color: #bfa574;
+      }
+
+      .signup-text {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        color: #c2c2c2;
+      }
+
+      .signup-text a {
+        color: #00bcd4;
+        text-decoration: none;
+      }
+
+      .signup-text a:hover {
+        text-decoration: underline;
+      }
+
+      .password-strength {
+        margin-top: -10px;
+        font-size: 0.8rem;
+        color: #d1d1d1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <h1>Login</h1>
+        <img
+          src="login-illustration.png"
+          alt=""
+          class="login-image"
+        />
+        <form id="login-form">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+            aria-required="true"
+            autocomplete="username"
+          />
+
+          <label for="password">Password</label>
+          <div class="password-container">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+              aria-required="true"
+              autocomplete="current-password"
+            />
+            <span class="eye-icon" id="toggle-password">&#128065;</span>
+          </div>
+          <div class="password-strength" id="password-strength"></div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">I agree with T&C and Privacy policy</label>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+
+          <p class="signup-text">
+            Don't have an account? <a href="signup.html">Sign Up</a> here.
+        </p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordField = document.getElementById('password');
+        const passwordStrength = document.getElementById('password-strength');
+
+        togglePassword.addEventListener('click', function () {
+          const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordField.setAttribute('type', type);
+          this.textContent = type === 'password' ? '👁' : '🙈';
+        });
+
+       
+        passwordField.addEventListener('input', function () {
+          const value = passwordField.value;
+          let strength = 'Weak';
+
+          if (value.length >= 8) {
+            strength = 'Moderate';
+            if (/[A-Z]/.test(value) && /[0-9]/.test(value) && /[@$!%*?&#]/.test(value)) {
+              strength = 'Strong';
+            }
+          }
+
+          passwordStrength.textContent = Password Strength: ${strength};
+          passwordStrength.style.color = strength === 'Strong' ? 'green' : strength === 'Moderate' ? 'orange' : 'red';
+        });
+
+       
+        const form = document.getElementById('login-form');
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+
+          // Basic email validation
+          if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+
+         
+          const encryptedPassword = btoa(password); // Base64 encoding for demo purposes
+
+          
+          alert('Login button clicked');
+          console.log({ email, encryptedPassword });
+        });
+
+        function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+
+       
+      });
+    </script>
+  </body>
+</html>

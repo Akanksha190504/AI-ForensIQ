@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Service Features</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("keyfeature.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .left-section {
+        flex: 1;
+      }
+
+      .left-section img {
+        width: 100%;
+        border-radius: 10px;
+        max-width: 500px;
+      }
+
+      .right-section {
+        flex: 1;
+        padding-left: 40px;
+      }
+
+      .right-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #000000;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),
+          0 0 px rgba(195, 199, 200, 0.6);
+        background: linear-gradient(45deg, #00bcd4, #0cf3cc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: glow 1.5s infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: rgba(11, 220, 247, 0.8);
+        }
+        to {
+          text-shadow: 0 0 20px gb(47, 140, 153);
+        }
+      }
+
+      .right-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        color: #f1f1f1;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .feature {
+        background-color: #2e2e2e;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        transition: transform 0.3s, background-color 0.3s;
+        box-shadow: 0 0 1px rgba(0, 188, 212, 0.8);
+        cursor: pointer;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .feature:hover {
+        transform: translateY(-10px);
+        background-color: #1e1e1e;
+        box-shadow: 0 0 20px rgb(5, 166, 187);
+      }
+
+      .feature img {
+        width: 40px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .feature h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .feature p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #a9a9a9;
+      }
+
+      /* Ensure it looks good on smaller screens */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .left-section img {
+          max-width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Reset button styles */
+      button.feature {
+        background: none;
+        padding: 0;
+        border: none;
+        outline: none;
+      }
+
+      button.feature:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img src="php-developer.jpg" alt="Person monitoring data" />
+      </div>
+      <div class="right-section">
+        <h1>Key Service Features Protecting You</h1>
+        <p>
+          Our comprehensive security services are designed to safeguard your
+          digital assets with customized solutions, 24/7 incident response, and
+          proactive threat assessments.
+        </p>
+        <div class="features-grid">
+          <!-- First feature button with link to incidenttype.html -->
+          <button class="feature" id="custom-security"><a href="incidenttype.html"></a>
+            <img src="securityicon.png" alt="Security Icon" />
+            <h3>Customized Security Solutions</h3>
+            <p>
+              Tailored to meet the unique needs of your business, our security
+              solutions offer personalized protection for your infrastructure.
+            </p>
+          </button>
+          
+          <!-- Other feature buttons -->
+          <button class="feature">
+            <img src="va.png" alt="Assessment Icon" />
+            <h3>Vulnerability Assessment</h3>
+            <p>
+              Identify and address potential weaknesses in your system to
+              proactively mitigate security risks..
+            </p>
+          </button>
+          <button class="feature">
+            <img src="ir.png" alt="Incident Response Icon" />
+            <h3>24/7 Incident Response</h3>
+            <p>Immediate support to handle security breaches anytime.</p>
+          </button>
+          <button class="feature">
+            <img src="usertraining.png" alt="Training Icon" />
+            <h3>User Training Programs</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Add click event to the Customized Security Solutions button
+        const customSecurityButton = document.getElementById('custom-security');
+        
+        customSecurityButton.addEventListener('click', () => {
+          // Redirect to incidenttype.html when clicked
+          window.location.href = 'incidenttype.html';
+        });
+      });
+    </script>
+  </body>
+</html>
